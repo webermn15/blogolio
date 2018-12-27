@@ -2,8 +2,30 @@
 * * * GLOBALS * * *
 */
 
-/** { border: 1px solid black; }*/
+* { box-sizing: border-box; }
 
 html, body { margin: 0; padding: 0; }
 
 ul, li { margin-left: 0; padding-left: 0; }
+
+
+/*
+* * * LAYOUT * * *
+*/
+
+.main-content__wrapper {
+  margin: 0 auto;
+  max-width: 1003px;
+  padding: 0px 10px;
+  padding-top: 0;
+}
+
+.main-content {
+	display: flex;
+	flex-direction: row;
+}
+.main-content aside,
+section {
+	padding: 1rem;
+	border: 1px solid black;
+}

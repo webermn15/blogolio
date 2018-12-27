@@ -26,13 +26,19 @@ const Featured = ({excerpt, frontmatter, fields}) => {
 					backgroundColor: "rgba(0, 0, 0, 0.3)"
 				}}>
 					<div style={{fontWeight: 700}}>
-						{title}
+						{title} <br />{author} {date}
 					</div>
 					{excerpt}
 				</div>
 			</Link>
 		</div>
 	)
+}
+
+Featured.propTypes = {
+	excerpt: PropTypes.string,
+	frontmatter: PropTypes.object,
+	fields: PropTypes.object
 }
 
 export default Featured

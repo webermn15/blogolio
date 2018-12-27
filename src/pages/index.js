@@ -9,26 +9,21 @@ import Featured from '../components/featured'
 const IndexPage = (props) => {
   const cardInfo = props.data.allMarkdownRemark.edges
   return(
-    <Layout>
+    <Layout
+      section={cardInfo.map(({node}, i) => {
+        if (i === 0) {
+          return(<Featured key={i} {...node}/>)
+        } else {
+          return(
+            <BlogCard key={i} {...node} />
+          )
+        }
+      })}
+      aside={<div>this is the aside ayyy its the fonz ayyy</div>}
+    >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <h1>Landing Page</h1>
-      <Featured {...cardInfo[0].node}/>
-      <main style={{display: "flex", flexDirection: "row"}}>
-        <section style={{flexGrow: 2, border: "1px solid black"}}>
-          {cardInfo.map(({node}, i) => {
-            if (i === 0) {
-              return(<div key={i}></div>)
-            } else {
-              return(
-                <BlogCard key={i} {...node} />
-              )
-            }
-          })}
-        </section>
-        <aside style={{flexGrow: 1, border: "1px solid black", minWidth: "25%"}}>
-          this is the sidebar
-        </aside>
-      </main>
+      
     </Layout>
   )
 }
