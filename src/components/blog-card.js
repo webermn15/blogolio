@@ -9,14 +9,16 @@ const BlogCard = ({excerpt, frontmatter, fields}) => {
 	  <div key={title}>
 	    <h3>{title}</h3>
 	    <h5>{`${author}  -  ${date}`}</h5>
-	    <p>
-	      {`${excerpt} ... `}
+	    <div>
+	    	<div>
+	      	{excerpt}
+	      </div>
 	      <Link
 	        to={slug}
 	      >
 	        Read more
 	      </Link>
-	    </p>
+	    </div>
 	  </div>
 	)
 }
