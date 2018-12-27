@@ -6,8 +6,8 @@ import './layout.css'
 const Header = ({ siteTitle }) => (
   <div>
 
-    <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around", alignItems: "center", width: "80%", margin: "0 auto"}}>
-      <div style={{ margin: 0 }}>
+    <div className="header-wrapper">
+      <div className="header-title">
         <Link
           to="/"
         >
@@ -15,8 +15,8 @@ const Header = ({ siteTitle }) => (
         </Link>
       </div>
 
-      <nav style={{margin: 0}}>
-        <ul style={{display: "flex", flexDirection: "row", listStyle: "none", margin: 0}}>
+      <nav>
+        <ul className="header-nav">
           <Link
             to="/about/"
             activeStyle={{
@@ -44,12 +44,12 @@ const Header = ({ siteTitle }) => (
         </ul>
       </nav>
 
-      <div style={{display: "flex", flexDirection: "row"}}>
-        <div style={{ width: `30px`, height: "30px", backgroundColor: "black" }}>
+      <div className="header-social-icons">
+        <div>
         </div>
-        <div style={{ width: `30px`, height: "30px", backgroundColor: "black" }}>
+        <div>
         </div>
-        <div style={{ width: `30px`, height: "30px", backgroundColor: "black" }}>
+        <div>
         </div>
       </div>
 
