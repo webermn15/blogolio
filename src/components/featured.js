@@ -9,8 +9,7 @@ const Featured = ({excerpt, frontmatter, fields}) => {
 		<div style={{
 			position: "relative", 
 			width: "100%", 
-			height: "16rem", 
-			border: "1px solid black"
+			height: "16rem"
 		}}>
 			Latest Post
 			<Link

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/blogLayout'
 import SEO from '../components/seo'
-import BlogCard from '../components/blog-card'
+import BlogCard from '../components/blogCard'
 import Featured from '../components/featured'
 
 const IndexPage = (props) => {
@@ -23,7 +23,6 @@ const IndexPage = (props) => {
     >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <h1>Landing Page</h1>
-      
     </Layout>
   )
 }
@@ -40,7 +39,10 @@ export const pageQuery = graphql`
         author
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/src/pages/posts//" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           fields {
