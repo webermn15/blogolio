@@ -10,11 +10,18 @@ const WorkCard = ({title, description, repo, link}) => {
 				<div>
 					{description}
 				</div>
-				<a href={repo}>CODE</a>
+				<a href={repo}>CODE</a><br/>
 				<a href={link}>PROJECT</a>
 			</div>
 		</div>
 	)
+}
+
+WorkCard.propTypes = {
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
+	repo: PropTypes.string.isRequired,
+	link: PropTypes.string.isRequired
 }
 
 export default WorkCard

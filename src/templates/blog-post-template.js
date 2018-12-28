@@ -21,8 +21,10 @@ const BlogPostTemplate = ({data}) => {
 	)
 }
 
+export default BlogPostTemplate
+
 export const blogPostQuery = graphql`
-	query blogPostQuery($path: String!) {
+	query postQuery($path: String!) {
     markdownRemark(fields: { slug: { eq: $path } }) {
     	html
     	frontmatter {
@@ -33,4 +35,3 @@ export const blogPostQuery = graphql`
     }
 	}
 `
-export default BlogPostTemplate

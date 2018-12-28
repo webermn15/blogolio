@@ -2,18 +2,15 @@ const path = require('path')
 const Promise = require('bluebird')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.createPages = ({ actions, graphql }) => {
+const createPages = ({ actions, graphql }, filter, templatePath) => {
 	const { createPage } = actions
 
 	return new Promise((resolve, reject) => {
-		const blogPostTemplate = path.resolve(`src/templates/blog-post-template.js`)
-
 		resolve(
 			graphql(`
 			{
 				allMarkdownRemark(
-					sort: { fields: [frontmatter___date], order: DESC }
-					limit: 500
+					filter: { fileAbsolutePath: { regex: "${filter}" } }
 				) {
 					edges {
 						node {
@@ -32,18 +29,28 @@ exports.createPages = ({ actions, graphql }) => {
 				console.log(result.errors)
 				reject(result.errors)
 			}
-
 			const posts = result.data.allMarkdownRemark.edges
 
 			posts.forEach((page, i) => {
 				createPage({
 					path: page.node.fields.slug,
-					component: blogPostTemplate
+					component: templatePath
 				})
 			})
 		})
 		)
 	})
+}
+
+const workTemplate = path.resolve('src/templates/work-detail-template.js')
+const workFilter = '/src/pages/work/'
+
+const blogPostTemplate = path.resolve('src/templates/blog-post-template.js')
+const blogPostFilter = '/src/pages/posts/'
+
+exports.createPages = async (props) => {
+	await createPages(props, workFilter, workTemplate)
+	await createPages(props, blogPostFilter, blogPostTemplate)
 }
 
 exports.onCreateNode = ({ node, getNode, actions}) => {

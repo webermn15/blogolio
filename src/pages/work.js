@@ -6,8 +6,8 @@ import Layout from '../components/generalLayout'
 import SEO from '../components/seo'
 import WorkCard from '../components/workCard'
 
-const Work = ({data: {allMarkdownRemark: {edges}}}) => {
-	console.log(edges[0].node.frontmatter)
+const Work = ({data}) => {
+	const { edges } = data.allMarkdownRemark
 	return(
 		<Layout>
 			<SEO title="Work" keywords={[`gatsby`, `application`, `react`]} />
