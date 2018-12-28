@@ -1,15 +1,24 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-const WorkCard = ({title, description, repo, link}) => {
-
+const WorkCard = ({frontmatter, fields}) => {
+	const { title, description, link, repo } = frontmatter
+	const { slug } = fields
 	return(
-		<div style={{width: "25%", height: "10rem", border: "1px solid black"}}>
-			<h1>{title}</h1>
-			<div>
+		<div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", width: "25%", height: "10rem", border: "1px solid black", textAlign: "center"}}>
+			<Link
+				to={slug}
+				style={{marginBottom: "1rem"}}
+			>
+				<h1>{title}</h1>
 				<div>
-					{description}
+					<div>
+						{description}
+					</div>
 				</div>
+			</Link>
+			<div style={{display: "flex", justifyContent: "space-between", alignItems: "flex-end", padding: "0.5rem"}}>
 				<a href={repo}>CODE</a><br/>
 				<a href={link}>PROJECT</a>
 			</div>
@@ -18,10 +27,8 @@ const WorkCard = ({title, description, repo, link}) => {
 }
 
 WorkCard.propTypes = {
-	title: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
-	repo: PropTypes.string.isRequired,
-	link: PropTypes.string.isRequired
+	fields: PropTypes.object.isRequired,
+	frontmatter: PropTypes.object.isRequired
 }
 
 export default WorkCard

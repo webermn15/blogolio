@@ -13,8 +13,8 @@ const Work = ({data}) => {
 			<SEO title="Work" keywords={[`gatsby`, `application`, `react`]} />
 			<h1>A selection of my projects, both unfinished and incomplete</h1>
 			<div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>	
-				{edges.map((proj, i) => {
-					return <WorkCard key={i} {...proj.node.frontmatter} />
+				{edges.map(({node}, i) => {
+					return <WorkCard key={i} {...node} />
 				})}
 			</div>
 		</Layout>
@@ -31,6 +31,9 @@ export const workQuery = graphql`
 		) {
 			edges {
 				node {
+					fields {
+						slug
+					}
 					frontmatter {
 						title
 						description

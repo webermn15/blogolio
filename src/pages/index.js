@@ -6,8 +6,8 @@ import SEO from '../components/seo'
 import BlogCard from '../components/blogCard'
 import Featured from '../components/featured'
 
-const IndexPage = (props) => {
-  const cardInfo = props.data.allMarkdownRemark.edges
+const IndexPage = ({data}) => {
+  const cardInfo = data.allMarkdownRemark.edges
   return(
     <Layout
       section={cardInfo.map(({node}, i) => {
