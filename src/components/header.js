@@ -4,7 +4,7 @@ import React from 'react'
 import './layout.css'
 
 const Header = ({ siteTitle }) => (
-  <div>
+  <header className="header">
 
     <div className="header-wrapper">
       <div className="header-title">
@@ -17,6 +17,14 @@ const Header = ({ siteTitle }) => (
 
       <nav>
         <ul className="header-nav">
+          <Link
+            to="/"
+            activeStyle={{
+              textDecoration: "underline"
+            }}
+          >
+            Blog
+          </Link>
           <Link
             to="/about/"
             activeStyle={{
@@ -45,6 +53,7 @@ const Header = ({ siteTitle }) => (
       </nav>
 
       <div className="header-social-icons">
+      connect:
         <div>
         </div>
         <div>
@@ -54,7 +63,7 @@ const Header = ({ siteTitle }) => (
       </div>
 
     </div>
-  </div>
+  </header>
 )
 
 Header.propTypes = {

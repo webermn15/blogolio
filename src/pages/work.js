@@ -11,7 +11,7 @@ const Work = ({data}) => {
 	return(
 		<Layout>
 			<SEO title="Work" keywords={[`gatsby`, `application`, `react`]} />
-			<h1>A selection of my projects, both unfinished and incomplete</h1>
+			<h2>A selection of my projects, both unfinished and incomplete</h2>
 			<div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>	
 				{edges.map(({node}, i) => {
 					return <WorkCard key={i} {...node} />

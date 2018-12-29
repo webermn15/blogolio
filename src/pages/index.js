@@ -22,7 +22,6 @@ const IndexPage = ({data}) => {
       aside={<div>this is the aside ayyy its the fonz ayyy</div>}
     >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <h1>Landing Page</h1>
     </Layout>
   )
 }
