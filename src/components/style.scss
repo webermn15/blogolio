@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Francois+One|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Francois+One|Open+Sans|Source+Serif+Pro|Source+Sans+Pro:700');
 
 
 /*
@@ -25,10 +25,29 @@ $yg: #D2E68D;
 $light-yh: #DDECA9;
 
 $off-white: #f6f5f3;
+$charcoal: #333333;
+$light-grey: #DADADA;
 
 //fonts
 $title-font: 'Francois One', sans-serif;
+$lead-font: 'Source Sans Pro', sans-serif;
 $block-font: 'Open Sans', sans-serif;
+$body-serif: 'Source Serif Pro', 'Times New Roman', serif;
+
+
+/*
+*
+* * * MIXINS * * *
+*
+*/
+
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  -ms-appearance: $value;
+  -o-appearance: $value;
+  appearance: $value;
+}
 
 
 /*
@@ -40,14 +59,32 @@ $block-font: 'Open Sans', sans-serif;
 * {
 	font-family: $block-font;
 	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 html, body { margin: 0; padding: 0; }
 
 ul, li { margin-left: 0; padding-left: 0; }
+
+.svg-icon {
+  display:inline-block;
+  width:1em;
+  height:1em;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+input[type="text"],
+input[type="search"],
+input[type="password"] {
+	@include appearance(none);
+	border: 2px solid $light-grey;
+	font-style: italic;
+	padding: .5rem;
+}
 
 
 /*
@@ -61,6 +98,9 @@ ul, li { margin-left: 0; padding-left: 0; }
 	font-size: 16px;
 	background-color: $dark-teal;
 	margin-bottom: 4rem;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 .header-title, .header-title > * {
@@ -111,27 +151,30 @@ ul, li { margin-left: 0; padding-left: 0; }
 .main-content {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 .main-content aside,
 section {
-	padding: 1rem;
-	/*border: 1px solid black;*/
+	padding: 1.5rem 0.75rem;
 }
+.main-content aside { width: 25%; }
+.main-content section { width: 75%; }
 
 
 /*
 *
-* * * FEATURED * * *
+* * * BLOG CARD * * *
 *
 */
 
-.featured {
+.blog-card {
 	position: relative;
 	width: 100%;
-	height: 16rem;
+	height: 18rem;
+	margin-bottom: 1.5rem;
 }
 
-.featured-wrapper {
+.blog-card__wrapper {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -140,14 +183,49 @@ section {
 	z-index: 2;
 }
 
-.featured-info {
+.blog-card-info {
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	height: 50%;
 	width: 100%;
-	padding: 1rem;
+	padding: .5rem 1rem 0;
+	color: $charcoal;
+	font-size: 14px;
 	background-color: rgba(255, 255, 255, 0.7);
 }
+
+.blog-card__header { text-align: center; }
+.blog-card__header .bc-title { font-size: 2rem; font-family: $lead-font; }
+.blog-card__header .bc-subtitle { margin: 0 auto; padding-bottom: 0.2rem; display: flex; justify-content: center; font-style: italic; font-size: 12px; }
+.bc-subtitle span { margin: 0 1rem; }
+
+.blog-card__excerpt { font-family: $body-serif; }
+
+/*
+*
+* * * ASIDE * * *
+*
+*/
+
+
+
+	/* * * SEARCH FIELD * * */
+
+	.blog-search__wrapper { position: relative; }
+	.blog-search__wrapper input[type="search"] { width: 100% }
+
+	.blog-search__button {
+    position:absolute;
+    top:4px; bottom:4px; right:4px;
+    width:30px;
+    border:0;
+    color:#a8a8a8;
+    cursor:pointer;
+    background:transparent;
+	}
+
+
+
 
 

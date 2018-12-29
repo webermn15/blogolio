@@ -2,7 +2,7 @@
 title: Optimized for Change
 date: '2018-12-12'
 spoiler: What makes a great API?
-author: webss
+author: Webs
 ---
 
 What makes a great API?

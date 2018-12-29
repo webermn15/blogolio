@@ -4,24 +4,18 @@ import { graphql } from 'gatsby'
 import Layout from '../components/blogLayout'
 import SEO from '../components/seo'
 import BlogCard from '../components/blogCard'
-import Featured from '../components/featured'
+import BlogAside from '../components/blogAside'
 
 const IndexPage = ({data}) => {
   const cardInfo = data.allMarkdownRemark.edges
   return(
     <Layout
       section={cardInfo.map(({node}, i) => {
-        if (i === 0) {
-          return(<Featured key={i} {...node}/>)
-        } else {
-          return(
-            <BlogCard key={i} {...node} />
-          )
-        }
+        return(<BlogCard key={i} {...node} />)
       })}
-      aside={<div>this is the aside ayyy its the fonz ayyy</div>}
+      aside={<BlogAside />}
     >
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title="Blog" keywords={[`gatsby`, `application`, `react`]} />
     </Layout>
   )
 }
@@ -48,11 +42,11 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD")
+            date(formatString: "MM-DD-YY")
             title
             author
           }
-          excerpt(pruneLength: 200)
+          excerpt(pruneLength: 300)
         }
       }
     }

@@ -2,7 +2,7 @@
 title: Boptimized for Change
 date: '2018-12-01'
 spoiler: What makes a great dinner?
-author: webss
+author: Webs
 ---
 
 What makes a great API?

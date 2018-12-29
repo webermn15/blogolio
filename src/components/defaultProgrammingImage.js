@@ -2,12 +2,12 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-const DefaultFeaturedImage = () => {
+const DefaultProgrammingImage = () => {
 	return(
 		<StaticQuery
 	    query={graphql`
 	      query {
-	      	defaultImage: file(relativePath: { eq: "default-featured-bg.jpg" }) {
+	      	defaultImage: file(relativePath: { eq: "default-programming-bg.jpg" }) {
 			      childImageSharp {
 			        fluid(maxWidth: 1000, maxHeight: 550, quality: 100) {
 			          ...GatsbyImageSharpFluid
@@ -17,7 +17,6 @@ const DefaultFeaturedImage = () => {
 	      }
 	    `}
 	    render={data => {
-	    	console.log(data)
 	    	return(
 	    		<Img 
 	    			fluid={data.defaultImage.childImageSharp.fluid}
@@ -36,4 +35,4 @@ const DefaultFeaturedImage = () => {
 	)
 }
 
-export default DefaultFeaturedImage
+export default DefaultProgrammingImage

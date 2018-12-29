@@ -1,7 +1,8 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import './layout.css'
+
+import SocialIcon from './socialIcon'
 
 const Header = ({ siteTitle }) => (
   <header className="header">
@@ -19,32 +20,36 @@ const Header = ({ siteTitle }) => (
         <ul className="header-nav">
           <Link
             to="/"
+            style={{padding: "3px 0"}}
             activeStyle={{
-              textDecoration: "underline"
+              borderBottom: "1px solid #f6f5f3"
             }}
           >
             Blog
           </Link>
           <Link
             to="/about/"
+            style={{padding: "3px 0"}}
             activeStyle={{
-              textDecoration: "underline"
+              borderBottom: "1px solid #f6f5f3"
             }}
           >
             About
           </Link>
           <Link
             to="/work/"
+            style={{padding: "3px 0"}}
             activeStyle={{
-              textDecoration: "underline"
+              borderBottom: "1px solid #f6f5f3"
             }}
           >
             Work
           </Link>
           <Link
             to="/smash/"
+            style={{padding: "3px 0"}}
             activeStyle={{
-              textDecoration: "underline"
+              borderBottom: "1px solid #f6f5f3"
             }}
           >
             Alter-Ego
@@ -54,12 +59,9 @@ const Header = ({ siteTitle }) => (
 
       <div className="header-social-icons">
       connect:
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
+        
+        <SocialIcon path="../images/linkedin.png" name="LinkedIn" />
+        <SocialIcon path="../images/github.png" name="Github" />
       </div>
 
     </div>
