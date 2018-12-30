@@ -223,6 +223,13 @@ input[type="password"] {
 		color: $charcoal;
 		font-size: 14px;
 		background-color: rgba(255, 255, 255, 0.7);
+		transition: height 0.2s ease-in-out;
+	}
+	.blog-card-info:hover { 
+		background-color: rgba(255, 255, 255, 0.8);
+		.blog-card__cta {
+			color: $charcoal;
+		}
 	}
 
 	.blog-card__header { text-align: center; }
@@ -231,6 +238,7 @@ input[type="password"] {
 	.bc-subtitle span { margin: 0 1rem; }
 
 	.blog-card__excerpt { font-family: $body-serif; padding: 0.3rem 0; }
+	.blog-card__cta { text-align: center; font-family: $body-serif; text-decoration: underline; color: $teal; }
 
 /*
 *

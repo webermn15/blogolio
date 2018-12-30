@@ -22,6 +22,9 @@ const BlogCard = ({excerpt, frontmatter, fields}) => {
 						<div className="blog-card__excerpt">
 							{excerpt}
 						</div>
+						<div className="blog-card__cta">
+							Continue reading ⇒
+						</div>
 					</div>
 				</Link>
 			</div>
