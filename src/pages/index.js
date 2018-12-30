@@ -46,7 +46,7 @@ export const pageQuery = graphql`
             title
             author
           }
-          excerpt(pruneLength: 300)
+          excerpt(pruneLength: 200)
         }
       }
     }

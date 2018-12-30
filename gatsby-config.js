@@ -31,7 +31,7 @@ module.exports = {
         short_name: `websdev`,
         start_url: `/`,
         display: `standalone`,
-        icon: `src/images/frogcon.png`, // This path is relative to the root of the site.
+        icon: `src/images/comfyfrog.png`, // This path is relative to the root of the site.
         theme_color_in_head: false,
       },
     },

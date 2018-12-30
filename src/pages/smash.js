@@ -11,9 +11,9 @@ const Smash = ({data}) => {
 		<Layout>
 			<SEO title="Smash" keywords={[`gatsby`, `application`, `react`]} />
 			<div>
-				<h2>Me commentating af</h2>
+				<div className="page-title">Me commentating af</div>
 				<Img fluid={data.commentatorImage.childImageSharp.fluid} />
-				<p>I moonlight as a commentator for one of the longest-standing competitive gaming communities, Super Smash Bros. Melee. Look at me! I'm talking into a microphone!</p>
+				<div className="smash-body">I moonlight as a commentator for one of the longest-standing competitive gaming communities, Super Smash Bros. Melee. Look at me! I'm talking into a microphone!</div>
 			</div>
 		</Layout>
 	)
