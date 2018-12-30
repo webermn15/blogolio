@@ -12,7 +12,7 @@ const Smash = ({data}) => {
 			<SEO title="Smash" keywords={[`gatsby`, `application`, `react`]} />
 			<div>
 				<div className="page-title">Smash</div>
-				<Img fluid={data.commentatorImage.childImageSharp.fluid} />
+				<Img fluid={data.commentatorImage.childImageSharp.fluid} style={{marginTop: "1rem"}} />
 				<div className="photo-cred" style={{textAlign: "right"}}>Photo Credit -<a href="http://rmpaul.com/">Rob Paul</a></div>
 				<div className="smash-body">
 					I moonlight as a commentator for one of the longest-standing competitive gaming communities, Super Smash Bros. Melee. Look at me! I'm talking into a microphone!
@@ -21,7 +21,7 @@ const Smash = ({data}) => {
 				</div>
 			</div>
 			<div style={{width: "100%"}}>
-				<iframe style={{position: "absolute", left: 0, right: 0, margin: "2rem auto"}} width="560" height="315" src="https://www.youtube.com/embed/BAckLJfm4ZY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe style={{position: "absolute", left: 0, right: 0, margin: "2rem auto"}} title="embedded-reel" width="560" height="315" src="https://www.youtube.com/embed/BAckLJfm4ZY" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
 			</div>
 		</Layout>
 	)

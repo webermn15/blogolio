@@ -10,7 +10,7 @@ const WorkDetailTemplate = ({data}) => {
 	return(
 		<Layout>
 			<SEO title="title" keywords={[`gatsby`, `application`, `react`]} />
-			<h1>{title}</h1>
+			<div className="work-template-title ">{title}</div>
 			<h3>{description}</h3>
 			<a href={repo} style={{marginRight: "2rem"}}>Github Repo</a><a href={link}>Project Link</a>
 			<div dangerouslySetInnerHTML={{ __html: html}} />

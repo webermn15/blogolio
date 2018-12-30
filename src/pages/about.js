@@ -12,7 +12,7 @@ const About = ({data}) => {
 			<SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
 			<div>
 				<div className="page-title">Me</div>
-				<div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>	
+				<div className="about-info">	
 					<div style={{minWidth: "200px", marginRight: "2rem"}}>
 						<Img fluid={data.aboutImage.childImageSharp.fluid} />
 					</div>

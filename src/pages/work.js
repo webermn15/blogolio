@@ -8,11 +8,12 @@ import WorkCard from '../components/workCard'
 
 const Work = ({data}) => {
 	const { edges } = data.allMarkdownRemark
+	console.log(edges)
 	return(
 		<Layout>
 			<SEO title="Work" keywords={[`gatsby`, `application`, `react`]} />
 			<div className="page-title">A collection of my projects, both unfinished and incomplete</div>
-			<div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>	
+			<div className="work__wrapper">	
 				{edges.map(({node}, i) => {
 					return <WorkCard key={i} {...node} />
 				})}
@@ -39,6 +40,13 @@ export const workQuery = graphql`
 						description
 						repo
 						link
+						thumbnail {
+							childImageSharp {
+								fluid(maxWidth: 500) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 					}
 				}
 			}

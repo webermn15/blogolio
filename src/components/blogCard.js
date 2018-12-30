@@ -17,14 +17,14 @@ const BlogCard = ({frontmatter, fields}) => {
 					<div className="blog-card-info">
 						<div className="blog-card__header">
 							<div className="bc-title">{title}</div>
-							<div className="bc-subtitle"><span>{author}</span>/ <span>{date}</span></div>
+							<div className="bc-subtitle subtitle-border"><span>{author}</span>/ <span>{date}</span></div>
 						</div>
 						<div className="blog-card__content">
 							<div className="blog-card__excerpt">
 								{spoiler}
 							</div>
 							<div className="blog-card__cta">
-								Read ⇒
+								Continue reading ⇒
 							</div>
 						</div>
 					</div>

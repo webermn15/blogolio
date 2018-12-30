@@ -4,18 +4,17 @@ import { graphql } from 'gatsby'
 import Layout from '../components/blogLayout'
 import SEO from '../components/seo'
 import BlogCard from '../components/blogCard'
-import BlogAside from '../components/blogAside'
 
 const IndexPage = ({data}) => {
   const cardInfo = data.allMarkdownRemark.edges
   return(
     <Layout
-      section={cardInfo.map(({node}, i) => {
+      article={cardInfo.map(({node}, i) => {
         return(<BlogCard key={i} {...node} />)
       })}
-      aside={<BlogAside />}
     >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <div className="page-title">Blog</div>
     </Layout>
   )
 }

@@ -2,25 +2,38 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
+import Img from 'gatsby-image'
+
 const WorkCard = ({frontmatter, fields}) => {
-	const { title, description, link, repo } = frontmatter
+	const { title, description, link, repo, thumbnail } = frontmatter
 	const { slug } = fields
 	return(
-		<div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", width: "25%", height: "10rem", border: "1px solid black", textAlign: "center"}}>
+		<div className="work-card__wrapper">
 			<Link
 				to={slug}
-				style={{marginBottom: "1rem"}}
+				className="work-card__thumb-wrapper"
 			>
-				<h1>{title}</h1>
+				<div className="wctw-hoverfade"/>
+				<Img fluid={thumbnail.childImageSharp.fluid} alt={title} style={{width: "400px"}} />
+			</Link>
+			<div className="work-card__info">
 				<div>
-					<div>
+					<Link
+						to={slug}
+						className="work-card__title-link-wrapper"
+					>
+						<div className="work-card__title">{title}</div>
+					</Link>
+				</div>
+				<div className="work-card__content">
+					<div className="work-card__links subtitle-border">
+						<a href={repo}>Github Repo</a>
+						<a href={link}>Project</a>
+					</div>
+					<div className="work-card__description">
 						{description}
 					</div>
 				</div>
-			</Link>
-			<div style={{display: "flex", justifyContent: "space-between", alignItems: "flex-end", padding: "0.5rem"}}>
-				<a href={repo}>CODE</a><br/>
-				<a href={link}>PROJECT</a>
 			</div>
 		</div>
 	)

@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import BlogAside from './blogAside'
 import './style.scss'
 
-const Layout = ({ children, section, aside }) => (
+const Layout = ({ children, article }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleBlogQuery {
@@ -23,10 +24,10 @@ const Layout = ({ children, section, aside }) => (
         {children}
           <main className="main-content">
             <section>
-              {section}
+              {article}
             </section>
             <aside>
-              {aside}
+              <BlogAside />
             </aside>
           </main>
         </div>
@@ -37,8 +38,7 @@ const Layout = ({ children, section, aside }) => (
 
 Layout.propTypes = {
   children: PropTypes.node,
-  section: PropTypes.node.isRequired,
-  aside: PropTypes.node.isRequired,
+  article: PropTypes.node.isRequired,
 }
 
 export default Layout

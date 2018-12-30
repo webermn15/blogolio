@@ -2,9 +2,9 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import github from '../images/github.png'
-import twitter from '../images/twitter-circle.png'
-import linkedin from '../images/linkedin.png'
+import github from '../images/social/github.png'
+import twitter from '../images/social/twitter-circle.png'
+import linkedin from '../images/social/linkedin.png'
 
 const Header = ({ siteTitle }) => (
   <header className="header">
@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => (
             to="/"
             style={{padding: "3px 0"}}
             activeStyle={{
-              borderBottom: "1px solid #f6f5f3"
+              borderBottom: "1px solid"
             }}
           >
             Blog
@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => (
             to="/about/"
             style={{padding: "3px 0"}}
             activeStyle={{
-              borderBottom: "1px solid #f6f5f3"
+              borderBottom: "1px solid"
             }}
           >
             About
@@ -42,7 +42,7 @@ const Header = ({ siteTitle }) => (
             to="/work/"
             style={{padding: "3px 0"}}
             activeStyle={{
-              borderBottom: "1px solid #f6f5f3"
+              borderBottom: "1px solid"
             }}
           >
             Work
@@ -51,7 +51,7 @@ const Header = ({ siteTitle }) => (
             to="/smash/"
             style={{padding: "3px 0"}}
             activeStyle={{
-              borderBottom: "1px solid #f6f5f3"
+              borderBottom: "1px solid"
             }}
           >
             Alter-Ego

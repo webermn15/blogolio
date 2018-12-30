@@ -1,7 +1,7 @@
 ---
-title: Optimized for Change
-date: '2018-12-12'
-spoiler: What makes a great API?
+title: Configuring USB controllers for PIs in PY
+date: '2018-12-01'
+spoiler: Adventures in Python and Bash scripting
 author: Webs
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: Boptimized for Change
-date: '2018-12-01'
-spoiler: What makes a great dinner?
+title: Magic in programming
+date: '2018-12-12'
+spoiler: What are we really learning?
 author: Webs
 ---
 
