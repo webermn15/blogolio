@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 
 import DefaultProgrammingImage from './defaultProgrammingImage'
 
-const BlogCard = ({excerpt, frontmatter, fields}) => {
-	const { title, date, author } = frontmatter
+const BlogCard = ({frontmatter, fields}) => {
+	const { title, date, author, spoiler } = frontmatter
 	const { slug } = fields
 	return(
 		<div className="blog-card">
@@ -19,11 +19,13 @@ const BlogCard = ({excerpt, frontmatter, fields}) => {
 							<div className="bc-title">{title}</div>
 							<div className="bc-subtitle"><span>{author}</span>/ <span>{date}</span></div>
 						</div>
-						<div className="blog-card__excerpt">
-							{excerpt}
-						</div>
-						<div className="blog-card__cta">
-							Continue reading ⇒
+						<div className="blog-card__content">
+							<div className="blog-card__excerpt">
+								{spoiler}
+							</div>
+							<div className="blog-card__cta">
+								Read ⇒
+							</div>
 						</div>
 					</div>
 				</Link>

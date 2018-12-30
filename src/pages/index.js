@@ -15,7 +15,7 @@ const IndexPage = ({data}) => {
       })}
       aside={<BlogAside />}
     >
-      <SEO title="Blog" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     </Layout>
   )
 }
@@ -42,11 +42,11 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MM-DD-YY")
+            date(formatString: "MMMM DD, YYYY")
             title
             author
+            spoiler
           }
-          excerpt(pruneLength: 200)
         }
       }
     }

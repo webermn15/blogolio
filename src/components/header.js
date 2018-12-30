@@ -60,7 +60,6 @@ const Header = ({ siteTitle }) => (
       </nav>
 
       <div className="header-social-icons">
-        <div className="connect">Connect:</div>
         <div className="social-icon__wrapper">
           <a href="https://twitter.com/_websdev">
             <img src={twitter} alt="Twitter" />
