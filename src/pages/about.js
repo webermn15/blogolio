@@ -11,7 +11,7 @@ const About = ({data}) => {
 		<Layout>
 			<SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
 			<div>
-				<div className="page-title">Me</div>
+				<div className="page-title">I'm Michael 'Webs' Weber</div>
 				<div className="about-info">	
 					<div style={{minWidth: "200px", marginRight: "2rem"}}>
 						<Img fluid={data.aboutImage.childImageSharp.fluid} />

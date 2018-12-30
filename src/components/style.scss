@@ -79,7 +79,7 @@ $body-serif: 'Source Serif Pro', 'Times New Roman', serif;
 }
 
 html, body { margin: 0; padding: 0; }
-body { background-image: url("../images/light-tile-bg.png"); }
+body { background-image: url("../images/shine-bg.png"); }
 
 ul, li { margin-left: 0; padding-left: 0; }
 
@@ -198,7 +198,7 @@ input[type="password"] {
 	}
 	.main-content aside,
 	section {
-		padding: 1rem 0.75rem;
+		padding: 1rem 0.75rem 1rem 0;
 	}
 	.main-content aside { width: 25%; }
 	.main-content section { width: 75%; font-family: $body-serif; }
