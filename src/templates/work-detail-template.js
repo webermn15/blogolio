@@ -12,7 +12,7 @@ const WorkDetailTemplate = ({data}) => {
 	return(
 		<Layout>
 			<SEO title="title" keywords={[`gatsby`, `application`, `react`]} />
-			<Img fluid={thumbnail.childImageSharp.fluid} alt={title} />
+			<Img fluid={thumbnail.childImageSharp.fluid} alt={title} style={{marginBottom: ".5rem"}}/>
 			<div className="work-template-title ">{title}</div>
 			<h3>{description}</h3>
 			<a href={repo} style={{marginRight: "2rem"}}>Github Repo</a><a href={link}>Project Link</a>
@@ -37,7 +37,7 @@ export const workDetailQuery = graphql`
     		link
     		thumbnail {
 					childImageSharp {
-						fluid(maxWidth: 500) {
+						fluid(maxWidth: 1500) {
 							...GatsbyImageSharpFluid
 						}
 					}
