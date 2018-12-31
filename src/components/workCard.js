@@ -14,7 +14,7 @@ const WorkCard = ({frontmatter, fields}) => {
 				className="work-card__thumb-wrapper"
 			>
 				<div className="wctw-hoverfade"/>
-				<Img fluid={thumbnail.childImageSharp.fluid} alt={title} style={{width: "400px"}} />
+				<Img fluid={thumbnail.childImageSharp.fluid} alt={title} className="work-card__thumb" />
 			</Link>
 			<div className="work-card__info">
 				<div>

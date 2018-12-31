@@ -1,5 +1,5 @@
 ---
-title: Configuring USB controllers for PIs in PY
+title: USB controllers, Py, and Pi
 date: '2018-12-01'
 spoiler: Adventures in Python and Bash scripting
 author: Webs

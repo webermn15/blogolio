@@ -10,7 +10,7 @@ const BlogPostTemplate = ({data}) => {
 	const { date, title, author } = frontmatter
 	return(
 		<Layout
-			article={<div dangerouslySetInnerHTML={{__html: html}} />}
+			article={<div className="post__wrapper"><div dangerouslySetInnerHTML={{__html: html}} /></div>}
 		>
       <SEO title={title} keywords={[`gatsby`, `application`, `react`]} />
       <div className="post-header">

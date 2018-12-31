@@ -2,7 +2,7 @@
 title: The Pick Is In
 description: An in-person Fantasy Football draft tool
 repo: https://github.com/webermn15/thepickisin
-link: https://friendsofgroup.com
+link: http://friendsofgroup.com
 id: 3
 thumbnail: './img/thepickisin.jpg'
 ---

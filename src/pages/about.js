@@ -13,7 +13,7 @@ const About = ({data}) => {
 			<div>
 				<div className="page-title">I'm Michael 'Webs' Weber</div>
 				<div className="about-info">	
-					<div style={{minWidth: "200px", marginRight: "2rem"}}>
+					<div className="about-photo">
 						<Img fluid={data.aboutImage.childImageSharp.fluid} />
 					</div>
 					<div className="about-body">

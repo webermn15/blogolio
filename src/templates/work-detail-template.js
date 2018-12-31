@@ -13,7 +13,9 @@ const WorkDetailTemplate = ({data}) => {
 			<div className="work-template-title ">{title}</div>
 			<h3>{description}</h3>
 			<a href={repo} style={{marginRight: "2rem"}}>Github Repo</a><a href={link}>Project Link</a>
-			<div dangerouslySetInnerHTML={{ __html: html}} />
+			<div className="work-detail__wrapper">
+				<div dangerouslySetInnerHTML={{ __html: html}} />
+			</div>
 		</Layout>
 	)
 }

@@ -61,11 +61,22 @@ $body-serif: 'Source Serif Pro', 'Times New Roman', serif;
 	color: $charcoal;
 }
 
+%body-text {
+	font-family: $body-serif;
+	font-size: 1rem;
+}
+
 %font-smoothing {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
+
+@media (max-width: 50rem) {
+	%title-text { font-size: 1.8rem; }
+	// %body-text { font-size: .8rem; }
+}
+
 
 /*
 *
@@ -92,6 +103,7 @@ a:hover { color: $dark-lilypad; }
   height:1em;
 }
 
+/* clear those damn default button stylings and set our own */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
@@ -119,6 +131,11 @@ input[type="password"] {
 }
 .photo-cred a:hover { color: $dark-lilypad; }
 
+@media (max-width: 50rem) {
+	.photo-cred, .photo-cred > * { font-size: 10px; }
+	body, html { font-size: .8rem; }
+}
+
 
 /*
 *
@@ -131,7 +148,9 @@ input[type="password"] {
 	font-family: $block-font;
 	font-size: 16px;
 	background-color: $dark-teal;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
+	overflow: auto;
+	display: relative;
 }
 
 .header-title, .header-title > * {
@@ -151,7 +170,7 @@ input[type="password"] {
 	width: 80%;
 	margin: 0 auto;
 }
-.header-wrapper nav { width: 20%; }
+.header-wrapper nav { width: 16rem; }
 
 .header-nav {
 	margin: 0;
@@ -168,6 +187,12 @@ input[type="password"] {
 
 .social-icon__wrapper { display: flex; flex-direction: row; }
 .social-icon__wrapper a { padding: .2rem; }
+
+@media (max-width: 50rem) {
+	.header-wrapper { flex-direction: column; }
+	.header-wrapper nav { margin-bottom: 1rem; }
+	.header-social-icons { display: none; }
+}
 
 
 
@@ -189,6 +214,8 @@ input[type="password"] {
 	  max-width: 1003px;
 	  padding: 0px 10px;
 	  padding-top: 0;
+	  position: relative;
+	  overflow: auto;
 	}
 
 	.main-content {
@@ -197,11 +224,17 @@ input[type="password"] {
 		justify-content: space-between;
 	}
 	.main-content aside,
-	section {
+	.main-content section {
 		padding: 1rem 0.75rem 1rem 0;
 	}
 	.main-content aside { width: 25%; }
 	.main-content section { width: 75%; font-family: $body-serif; }
+
+	@media (max-width:50rem) {
+		.main-content { flex-direction: column; }
+		.main-content section, 
+		.main-content aside { width: 100%; padding: 1rem 0; }
+	}
 
 
 	/*
@@ -227,6 +260,7 @@ input[type="password"] {
 	}
 
 	.blog-card-info {
+		@extend %body-text;
 		display: flex;
 		flex-direction: column;
 		position: absolute;
@@ -236,20 +270,18 @@ input[type="password"] {
 		width: 100%;
 		padding: 0 1rem;
 		color: $charcoal;
-		font-size: 14px;
 		background-color: rgba(255, 255, 255, 0.7);
 		transition: background-color .2s ease-in-out;
 	}
 	.blog-card-info:hover { 
 		background-color: rgba(255, 255, 255, 0.8);
-		.blog-card__cta {
-			color: $charcoal;
-		}
+		.blog-card__header .bc-title { color: $charcoal }
+		// .blog-card__cta { color: $dark-lilypad; }
 	}
 
 	.blog-card__header { text-align: center; }
-	.blog-card__header .bc-title { @extend %title-text; padding: 0.3rem 0; }
-	.blog-card__header .bc-subtitle { margin: 0 auto; padding: 0.3rem 0; display: flex; justify-content: center; font-style: italic; font-size: 12px; }
+	.blog-card__header .bc-title { @extend %title-text; color: $dark-teal; padding: 0.3rem 0; transition: color .2s ease-in-out; }
+	.blog-card__header .bc-subtitle { margin: 0 auto; padding: 0.3rem 0; display: flex; justify-content: center; font-size: 14px; }
 	.bc-subtitle span { margin: 0 1rem; }
 
 	.blog-card__content {
@@ -260,7 +292,11 @@ input[type="password"] {
 	}
 
 	.blog-card__excerpt { font-family: $body-serif; padding: 0.3rem 0; text-align: center; }
-	.blog-card__cta { padding: 0 0 .5rem; text-align: center; font-family: $body-serif; text-decoration: underline; color: $teal; transition: color .2s ease-in-out; }
+	.blog-card__cta { padding: 0 0 .5rem; text-align: center; font-family: $body-serif; font-size: 14px; text-decoration: underline; color: $teal; transition: color .2s ease-in-out; }
+
+	@media (max-width: 50rem) {
+		.blog-card { height: 16rem; }
+	}
 
 	/*
 	*
@@ -320,6 +356,8 @@ input[type="password"] {
 		@extend %title-text;
 	}
 
+	.work-detail__wrapper { @extend %body-text;}
+
 
 	/*
 	*
@@ -332,17 +370,21 @@ input[type="password"] {
 		padding: 1rem 0; 
 	}
 
-	.work-card__thumb-wrapper { position: relative; }
+	.work-card__thumb-wrapper { position: relative; border: 1px solid $light-teal; }
 	.wctw-hoverfade { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background-color: none; transition: background-color .2s ease-in-out; }
 	
-
+	.work-card__thumb { min-width: 400px; }
 
 	.work-card__info {
 		display: flex;
 		flex-direction: column;
 		flex: 1 0 auto;
 		margin: 0 1rem;
+		padding: .5rem;
 		text-align: center;
+		border: 4px solid $light-grey;
+		outline: 1px solid $off-white;
+		outline-offset: -3px;
 	}
 
 	.work-card__title-link-wrapper { text-decoration: none; display: inline; }
@@ -356,6 +398,17 @@ input[type="password"] {
 	.work-card__links a:hover { color: $dark-lilypad; }
 
 	.work-card__thumb-wrapper:hover { .wctw-hoverfade { background-color: rgba(255, 255, 255, .2) } }
+
+	@media (max-width: 50rem) {
+		.work-card__wrapper { flex-direction: column; width: 60%; margin: 0 auto; }
+		.work-card__info { margin: 1rem 0; }
+		.work-card__thumb { min-width: 300px; }
+	}
+	@media (max-width: 38rem) {
+		.work-card__wrapper { width: 100%; }
+	}
+
+
 /*
 *
 * * * ABOUT * * *
@@ -363,14 +416,21 @@ input[type="password"] {
 */
 
 .about-body {
-	font-family: $body-serif;
+	@extend %body-text;
 }
+
+.about-photo { margin-right: 2rem; }
+.about-photo:first-child { min-width: 200px; }
 
 .about-info {
 	padding: 1rem 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+@media (max-width: 50rem) {
+	.about-photo:first-child { min-width: 100px; margin-bottom: 1rem; }
+	.about-info { flex-direction: column; align-items: flex-start; }
 }
 
 
@@ -381,7 +441,7 @@ input[type="password"] {
 */
 
 .smash-body {
-	font-family: $body-serif;
+	@extend %body-text;
 	margin-top: 1rem;
 }
 
