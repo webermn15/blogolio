@@ -4,7 +4,7 @@ description: An in-person Fantasy Football draft tool
 repo: https://github.com/webermn15/thepickisin
 link: http://friendsofgroup.com
 id: 3
-thumbnail: './img/thepickisin.jpg'
+thumbnail: './img/thepickisinthumb.png'
 ---
 
 Built in React, ThePickIsIn simply takes a MySQL db of football players and populates filterable lists sorted by position. When a player is selected, they are toggled to 'unavailable', and are by default removed from the position's list. You can toggle to show unavailable players and make them available again if there is an input error. Each player selection is accompanied by an audio announcement of the pick which is a big part of the reason why I was inspired to create it, because announcing picks is one of the most entertaining aspects of drafting in person.

@@ -17,7 +17,7 @@ const Smash = ({data}) => {
 				<div className="smash-body">
 					I moonlight as a commentator for one of the longest-standing competitive gaming communities, Super Smash Bros. Melee. Look at me! I'm talking into a microphone!
 					<br /><br />
-					<strong><a href="https://youtu.be/BAckLJfm4ZY">This</a></strong> is the one and only reel of my work I've put together, from 2016. I've been an active member of the scene since 2013, although in the past year it's taken a back seat in favor of programming. If you've stumbled across videos of competitive Melee in the past, there's a chance you heard my voice narrating the action! Don't hesitate to reach out if you're interested in learning more.
+					<strong><a href="https://youtu.be/BAckLJfm4ZY">This is the one and only reel</a></strong> of my work I've put together, from 2016. I've been an active member of the scene since 2013, although in the past year it's taken a back seat in favor of programming. If you've stumbled across videos of competitive Melee in the past, there's a chance you heard my voice narrating the action! Don't hesitate to reach out if you're interested in learning more.
 				</div>
 			</div>
 		</Layout>
