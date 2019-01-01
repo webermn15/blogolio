@@ -11,7 +11,7 @@ const Work = ({data}) => {
 	return(
 		<Layout>
 			<SEO title="Work" keywords={[`gatsby`, `application`, `react`]} />
-			<div className="page-title">A selection projects, both unfinished and incomplete</div>
+			<div className="page-title">A selection of projects, both unfinished and incomplete</div>
 			<div className="work__wrapper">	
 				{edges.map(({node}, i) => {
 					return <WorkCard key={i} {...node} />
@@ -39,6 +39,7 @@ export const workQuery = graphql`
 						description
 						repo
 						link
+						tech
 						thumbnail {
 							childImageSharp {
 								fluid(maxWidth: 500) {

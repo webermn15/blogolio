@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-
 import Img from 'gatsby-image'
 
+import SvgIcons from './svgIcons'
+
 const WorkCard = ({frontmatter, fields}) => {
-	const { title, description, link, repo, thumbnail } = frontmatter
+	const { title, description, link, repo, thumbnail, tech } = frontmatter
 	const { slug } = fields
+	const tags = tech.split(" ")
 	return(
 		<div className="work-card__wrapper">
 			<Link
@@ -25,13 +27,18 @@ const WorkCard = ({frontmatter, fields}) => {
 						<div className="work-card__title">{title}</div>
 					</Link>
 				</div>
-				<div className="work-card__content">
+				<div className="work-card__lower">
 					<div className="work-card__links subtitle-border">
 						<a href={repo}>Github Repo</a>
 						<a href={link}>Project</a>
 					</div>
-					<div className="work-card__description">
-						{description}
+					<div className="work-card__content">
+						<div className="work-card__description">
+							{description}
+						</div>
+						<div className="work-card__tech-wrapper">
+							<SvgIcons tags={tags} />
+						</div>
 					</div>
 				</div>
 			</div>

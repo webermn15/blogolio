@@ -55,6 +55,12 @@ $body-serif: 'Source Serif Pro', 'Times New Roman', serif;
 *
 */
 
+%font-smoothing {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
 %title-text {
 	font-family: $lead-font;
 	font-size: 2rem;
@@ -64,12 +70,6 @@ $body-serif: 'Source Serif Pro', 'Times New Roman', serif;
 %body-text {
 	font-family: $body-serif;
 	font-size: 1rem;
-}
-
-%font-smoothing {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 @media (max-width: 50rem) {
@@ -101,6 +101,21 @@ a:hover { color: $dark-lilypad; }
   display:inline-block;
   width:1em;
   height:1em;
+}
+
+.tech-svg {
+	display: inline-block;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+.photoshop-recolor path {
+	fill: white;
+}
+.webpack-recolor path {
+	fill: #1C78C0;
+}
+.react-recolor path {
+	fill: #00d8ff;
 }
 
 /* clear those damn default button stylings and set our own */
@@ -189,6 +204,7 @@ input[type="password"] {
 .social-icon__wrapper a { padding: .2rem; }
 
 @media (max-width: 50rem) {
+	.header { margin-bottom: 1rem; }
 	.header-wrapper { flex-direction: column; }
 	.header-wrapper nav { margin-bottom: 1rem; }
 	.header-social-icons { display: none; }
@@ -391,11 +407,14 @@ input[type="password"] {
 	.work-card__title { @extend %title-text; color: $dark-teal; display: inline; transition: color .2s ease-in-out; }
 	.work-card__title:hover { color: $charcoal; }
 
-	// .work-card__content { flex: 1 0 auto; }
+	.work-card__lower { display: flex; flex-direction: column; flex: 1 0 auto; }
+	.work-card__content { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: space-between; }
 	.work-card__description { padding: 0.5rem 0; }
 	.work-card__links { padding: .5rem 0; }
 	.work-card__links a { margin-right: 1rem; }
 	.work-card__links a:hover { color: $dark-lilypad; }
+
+	.work-card__tech-wrapper > * { margin: 0 .2rem;}
 
 	.work-card__thumb-wrapper:hover { .wctw-hoverfade { background-color: rgba(255, 255, 255, .2) } }
 
@@ -442,6 +461,6 @@ input[type="password"] {
 
 .smash-body {
 	@extend %body-text;
-	margin-top: 1rem;
+	margin: 1rem 0 2rem 0;
 }
 

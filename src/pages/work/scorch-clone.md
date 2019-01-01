@@ -1,10 +1,11 @@
 ---
+id: 4
 title: Scorch Clone
 description: Two dimensional multiplayer artillery game
 repo: https://github.com/webermn15/Scorch_a-scorched-earth-clone/
 link: https://webermn15.github.io/Scorch_a-scorched-earth-clone
-id: 4
 thumbnail: './img/scorchthumb.png'
+tech: javascript html5 css3
 ---
 
 Scorch Clone based on the classic DOS game Scorched Earth, which I loved as a kid. I used HTML5's Canvas element, CSS, and plain Javascript to create this game. The majority of the project was writing Javascript that directs the HTML5 Canvas element. Two to four players alternate turns adjusting the power and angle of their tanks' projectiles in an attempt to hit one another the quickest. When you're hit, you're eliminated, and the last player standing wins. 
