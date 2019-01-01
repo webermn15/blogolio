@@ -147,8 +147,9 @@ input[type="password"] {
 .photo-cred a:hover { color: $dark-lilypad; }
 
 @media (max-width: 50rem) {
-	.photo-cred, .photo-cred > * { font-size: 10px; }
 	body, html { font-size: .8rem; }
+	.tech-svg{ width: 1.75rem; height: 1.75rem; }
+	.photo-cred, .photo-cred > * { font-size: 10px; }
 }
 
 

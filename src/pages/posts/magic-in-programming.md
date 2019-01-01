@@ -1,7 +1,7 @@
 ---
 title: Magic in programming
 date: '2018-12-12'
-spoiler: What are we really learning?
+spoiler: What am I really learning?
 author: Webs
 ---
 
