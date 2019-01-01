@@ -1,0 +1,1 @@
+{"errors":[{"message":"Invalid flags supplied to RegExp constructor 'sq--src-components-social-icon-js'","locations":[{"line":4,"column":3}],"path":["socialImage"]}],"data":{"socialImage":null}}
