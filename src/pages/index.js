@@ -14,7 +14,7 @@ const IndexPage = ({data}) => {
       })}
     >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <div className="page-title">Thoughts</div>
+      <div className="page-title">Blog Posts</div>
     </Layout>
   )
 }

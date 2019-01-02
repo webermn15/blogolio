@@ -2,9 +2,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import github from '../images/social/github.png'
-import twitter from '../images/social/twitter-circle.png'
-import linkedin from '../images/social/linkedin.png'
+import SocialIcons from './socialIcons'
 
 const Header = ({ siteTitle }) => (
   <header className="header">
@@ -14,7 +12,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
         >
-          {siteTitle}
+          __WEBSDEV
         </Link>
       </div>
 
@@ -59,19 +57,7 @@ const Header = ({ siteTitle }) => (
         </ul>
       </nav>
 
-      <div className="header-social-icons">
-        <div className="social-icon__wrapper">
-          <a href="https://twitter.com/_websdev">
-            <img src={twitter} alt="Twitter" />
-          </a>
-          <a href="https://github.com/webermn15">
-            <img src={github} alt="Github" />
-          </a>
-          <a href="https://linkedin.com/in/michaelnweber">
-            <img src={linkedin} alt="LinkedIn" />
-          </a>
-        </div>
-      </div>
+      <SocialIcons />
 
     </div>
   </header>

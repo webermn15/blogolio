@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `__websdev`,
+    title: `wbdv`,
     description: `Michael Weber's personal website, portfolio, blog. Howdy folks.`,
     author: `Michael`,
   },

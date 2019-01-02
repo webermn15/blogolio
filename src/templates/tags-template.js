@@ -14,9 +14,9 @@ const TagsTemplate = ({data, pathContext}) => {
         return(<BlogCard key={i} {...node} />)
       })}
     >
-      <SEO title="dab" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title={`Posts tagged: '${tag}'`} keywords={[`gatsby`, `application`, `react`]} />
       <div className="post-header">
-        <div className="post-title">All posts tagged {` ${tag}`}</div>
+        <div className="post-title">All posts tagged "{`${tag}`}"</div>
       </div>
 
     </Layout>
