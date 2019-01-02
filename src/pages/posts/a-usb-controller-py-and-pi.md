@@ -3,7 +3,7 @@ title: USB controllers, Py, and Pi
 date: '2018-12-31'
 spoiler: My contribution to a cool project
 author: Webs
-tags: ["Programming", "SSBM"]
+tags: ["programming", "ssbm"]
 ---
 
 Last summer, I had the opportunity to contribute to an awesome project by [Abbie Rappaport](https://twitter.com/spoo0py), a Master's student at the University of Concordia in Montreal. Abbie is studying the esports community built around Super Smash Bros. Melee, an ancient title by competitive gaming standards with a deep, rich history. [The project](https://www.abbierappaport.com/games) brings together several different mediums to best introduce the uninitiated to what makes SSBM so special amongst gaming communities. I can't encourage you enough to follow through that link and check it out for yourself!

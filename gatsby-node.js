@@ -2,7 +2,7 @@ const path = require('path')
 const Promise = require('bluebird')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-const createPages = ({ actions, graphql }, filter, templatePath) => {
+const createPages = ({ actions, graphql }, filter, templatePath, isBlogPost) => {
 	const { createPage } = actions
 
 	return new Promise((resolve, reject) => {
@@ -19,6 +19,7 @@ const createPages = ({ actions, graphql }, filter, templatePath) => {
 							}
 							frontmatter {
 								title
+								tags
 							}
 						}
 					}
@@ -30,6 +31,28 @@ const createPages = ({ actions, graphql }, filter, templatePath) => {
 				reject(result.errors)
 			}
 			const posts = result.data.allMarkdownRemark.edges
+
+			if (isBlogPost) {
+				const allTags = posts.reduce((acc, curr) => {
+					curr.node.frontmatter.tags.forEach(tag => {
+						if (acc.indexOf(tag) < 0) {
+							kebabTag = tag.replace(/\s+/g, '-')
+							acc.push(kebabTag)
+						}
+					})
+					return acc
+				}, [])
+
+				allTags.forEach((tag, i) => {
+					createPage({
+						path: `/tags/${tag}/`,
+						component: path.resolve('src/templates/tags-template.js'),
+						context: {
+							tag
+						}
+					})
+				})
+			}
 
 			posts.forEach((page, i) => {
 				createPage({
@@ -49,8 +72,8 @@ const blogPostTemplate = path.resolve('src/templates/blog-post-template.js')
 const blogPostFilter = '/src/pages/posts/'
 
 exports.createPages = async (props) => {
-	await createPages(props, workFilter, workTemplate)
-	await createPages(props, blogPostFilter, blogPostTemplate)
+	await createPages(props, workFilter, workTemplate, false)
+	await createPages(props, blogPostFilter, blogPostTemplate, true)
 }
 
 exports.onCreateNode = ({ node, getNode, actions}) => {

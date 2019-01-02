@@ -3,7 +3,7 @@ title: Magic in programming
 date: '2019-01-01'
 spoiler: What am I really learning?
 author: Webs
-tags: ["Programming"]
+tags: ["programming"]
 ---
 
 Please excuse these placeholder posts! At least the titles are two of the first topics I'll be publishing, so you know what to expect when they do go up :P

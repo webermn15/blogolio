@@ -10,7 +10,7 @@ const Archives = () => {
 			query={archiveQuery}
 			render={({allMarkdownRemark}) => {
 				return(
-					<div>
+					<div className="archives">
 						<RecentArticles {...allMarkdownRemark} />
 						<PostTags {...allMarkdownRemark} />
 					</div>

@@ -5,28 +5,31 @@ import Layout from '../components/blogLayout'
 import SEO from '../components/seo'
 import BlogCard from '../components/blogCard'
 
-const IndexPage = ({data}) => {
+const TagsTemplate = ({data, pathContext}) => {
   const { edges } = data.allMarkdownRemark
-  return(
-    <Layout
+  const { tag } = pathContext
+	return(
+		<Layout
       article={edges.map(({node}, i) => {
         return(<BlogCard key={i} {...node} />)
       })}
     >
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <div className="page-title">Thoughts</div>
+      <SEO title="dab" keywords={[`gatsby`, `application`, `react`]} />
+      <div className="post-header">
+        <div className="post-title">All posts tagged {` ${tag}`}</div>
+      </div>
+
     </Layout>
-  )
+	)
 }
 
-export default IndexPage
+export default TagsTemplate
 
-
-export const pageQuery = graphql`
-  query {
+export const tagsQuery = graphql`
+	query TagsQuery($tag: String!) {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/src/pages/posts//" } }
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       edges {
         node {

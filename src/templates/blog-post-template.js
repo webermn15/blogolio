@@ -34,5 +34,5 @@ export const blogPostQuery = graphql`
     		author
     	}
     }
-	}
+  }
 `

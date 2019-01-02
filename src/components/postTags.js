@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const PostTags = ({edges}) => {
 	const allTags = edges.reduce((acc, curr) => {
@@ -15,7 +16,7 @@ const PostTags = ({edges}) => {
 				Browse by tag
 			</div>
 			{allTags.map((tag, i) => {
-				return <div className="widget-link" key={i}><a href="/">{tag}</a></div>
+				return <div className="widget-link" key={i}><Link to={`/tags/${tag}`}>{tag}</Link></div>
 			})}
 		</div>
 	)
