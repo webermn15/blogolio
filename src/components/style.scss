@@ -89,13 +89,34 @@ $body-serif: 'Source Serif Pro', 'Times New Roman', serif;
 	box-sizing: border-box;
 }
 
+ul { margin-left: 1rem; padding-left: 1rem; }
+
 html, body { margin: 0; padding: 0; }
 body { background-image: url("../images/shine-bg.png"); }
 
-ul, li { margin-left: 0; padding-left: 0; }
+// ul, li { margin-left: 0; padding-left: 0; }
 
 a { color: $dark-teal; transition: color .1s ease-in-out; }
 a:hover { color: $dark-lilypad; }
+
+blockquote { margin-left: 1rem; padding-left: 1rem; border-left: 1px solid $dark-teal; font-style: italic; }
+
+/* clear those damn default button stylings and set our own */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+input[type="text"],
+input[type="search"],
+input[type="password"] {
+	@include appearance(none);
+	border: 2px solid $light-grey;
+	font-style: italic;
+	padding: .5rem;
+}
+
+// .layout__wrapper { height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: flex-start; }
 
 .svg-icon {
   display:inline-block;
@@ -116,21 +137,6 @@ a:hover { color: $dark-lilypad; }
 }
 .react-recolor path {
 	fill: #00d8ff;
-}
-
-/* clear those damn default button stylings and set our own */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration { display: none; }
-
-input[type="text"],
-input[type="search"],
-input[type="password"] {
-	@include appearance(none);
-	border: 2px solid $light-grey;
-	font-style: italic;
-	padding: .5rem;
 }
 
 .subtitle-border { border-top: 1px solid $charcoal; border-bottom: 3px solid $charcoal; }
@@ -189,6 +195,8 @@ input[type="password"] {
 .header-wrapper nav { width: 16rem; }
 
 .header-nav {
+	margin-left: 0; 
+	padding-left: 0; 
 	margin: 0;
 	width: 100%;
 	display: flex;
@@ -211,6 +219,16 @@ input[type="password"] {
 	.header-social-icons { display: none; }
 }
 
+
+/*
+*
+* * * FOOTER * *
+*
+*/
+
+.footer { flex: 1 0 auto; font-size: .8rem; color: $light-grey; text-align: center; }
+.footer a { color: $light-teal; }
+@media (max-width: 50rem) { .footer { font-size: .6rem; } }
 
 
 /*
@@ -313,6 +331,10 @@ input[type="password"] {
 
 	@media (max-width: 50rem) {
 		.blog-card { height: 16rem; }
+		.blog-card__header .bc-subtitle { font-size: .9rem; }
+	}
+	@media (max-width: 25rem) {
+		.blog-card__header .bc-title { font-size: 1.6rem; }
 	}
 
 	/*
@@ -325,8 +347,15 @@ input[type="password"] {
 	}
 	.blog-header h1, h2, h3, h4, h5, h6 { font-family: $body-serif; margin: 0.5rem 0; }
 
-	.post-body {
-		font-family: $body-serif;
+	.post-body { font-family: $body-serif; }
+
+	@media (max-width: 50rem) {
+		.blog-aside { display: flex; flex-direction: row-reverse; justify-content: space-between; }
+		.blog-aside > * { max-width: 16rem; }
+	}
+	@media (max-width: 30rem) {
+		.blog-aside { flex-direction: column; }
+		.blog-aside > * { max-width: unset; }
 	}
 
 
@@ -349,6 +378,35 @@ input[type="password"] {
     color:#a8a8a8;
     cursor:pointer;
     background:transparent;
+	}
+
+	/*
+	*
+	* * * ARCHIVES * * *
+	*
+	*/
+
+	.archive__container {
+		padding: 1rem 0;
+	}
+
+	.widget-title {
+		@extend %title-text;
+		@extend %font-smoothing;
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	.widget-link { padding: .5rem .4rem 0 .4rem; }
+
+	@media (max-width: 50rem) {
+		.blog-search__wrapper { padding: 0 1rem; }
+		.blog-search__button { right:14px; }
+		.archive__container { padding: 0 1rem; }
+	}
+	@media (max-width: 30rem) {
+		.blog-search__wrapper { padding: 0; }
+		.blog-search__button { right:4px; }
+		.archive__container { padding: 1rem 0; }
 	}
 
 

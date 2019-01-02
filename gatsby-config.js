@@ -29,7 +29,21 @@ module.exports = {
         }
       }
     },
-    `gatsby-transformer-remark`,
+    {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            quality: 100,
+            maxWidth: 500,
+            showCaptions: true,
+          },
+        },
+      ],
+    },
+  },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

@@ -8,7 +8,6 @@ import SvgIcons from './svgIcons'
 const WorkCard = ({frontmatter, fields}) => {
 	const { title, description, link, repo, thumbnail, tech } = frontmatter
 	const { slug } = fields
-	const tags = tech.split(" ")
 	return(
 		<div className="work-card__wrapper">
 			<Link
@@ -37,7 +36,7 @@ const WorkCard = ({frontmatter, fields}) => {
 							{description}
 						</div>
 						<div className="work-card__tech-wrapper">
-							<SvgIcons tags={tags} />
+							<SvgIcons tags={tech} />
 						</div>
 					</div>
 				</div>

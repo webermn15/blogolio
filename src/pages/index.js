@@ -7,6 +7,7 @@ import BlogCard from '../components/blogCard'
 
 const IndexPage = ({data}) => {
   const cardInfo = data.allMarkdownRemark.edges
+  console.log(cardInfo)
   return(
     <Layout
       article={cardInfo.map(({node}, i) => {
@@ -45,6 +46,7 @@ export const pageQuery = graphql`
             title
             author
             spoiler
+            tags
           }
         }
       }
