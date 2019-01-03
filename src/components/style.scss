@@ -317,8 +317,11 @@ input[type="password"] {
 	.bc-title { @extend %title-text; color: $dark-teal; padding: 0.3rem 0; transition: color .2s ease-in-out; }
 	.bc-subtitle { position: relative; margin: 0 auto; padding: 0.3rem 0; display: flex; justify-content: center; font-size: 14px; }
 
-	.bc-tags { position: absolute; left: 0; display: flex; justify-content: space-between; align-items: center; font-size: .7rem; }
+	.bc-tags { position: absolute; left: 0; display: flex; justify-content: space-between; align-items: center; font-size: .6rem; }
 	.tag-icon { height: 18px; width: 18px; }
+	.tag-span { margin-left: .2rem; }
+	.tag-span:first-letter { text-transform: uppercase; }
+
 	.date-author { margin: 0 auto; }
 	.date-author span { margin: 0 1rem; }
 
@@ -336,7 +339,7 @@ input[type="password"] {
 		.blog-card { height: 16rem; }
 		.bc-subtitle { font-size: .9rem; }
 	}
-	@media (max-width: 25rem) {
+	@media (max-width: 30rem) {
 		.bc-title { font-size: 1.6rem; }
 		.bc-tags { display: none; }
 	}
