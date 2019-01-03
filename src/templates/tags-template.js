@@ -5,9 +5,9 @@ import Layout from '../components/blogLayout'
 import SEO from '../components/seo'
 import BlogCard from '../components/blogCard'
 
-const TagsTemplate = ({data, pathContext}) => {
+const TagsTemplate = ({data, pageContext}) => {
   const { edges } = data.allMarkdownRemark
-  const { tag } = pathContext
+  const { tag } = pageContext
 	return(
 		<Layout
       article={edges.map(({node}, i) => {

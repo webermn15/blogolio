@@ -22,7 +22,7 @@ const Archives = () => {
 
 export default Archives
 
-export const archiveQuery = graphql`
+const archiveQuery = graphql`
 	query ArchiveQuery {
 	  allMarkdownRemark(
 	    filter: { fileAbsolutePath: { regex: "/src/pages/posts//" } }

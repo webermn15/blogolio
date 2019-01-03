@@ -6,7 +6,7 @@ import DefaultProgrammingImage from './defaultProgrammingImage'
 import Tag from '!svg-react-loader!../images/svg/tag.svg?name=Tag'
 
 const BlogCard = ({frontmatter, fields}) => {
-	const { title, date, author, spoiler } = frontmatter
+	const { title, date, author, spoiler, tags } = frontmatter
 	const { slug } = fields
 	return(
 		<div className="blog-card">
@@ -19,7 +19,7 @@ const BlogCard = ({frontmatter, fields}) => {
 						<div className="blog-card__header">
 							<div className="bc-title">{title}</div>
 							<div className="bc-subtitle subtitle-border">
-								<div className="bc-tags"><Tag className="tag-icon" /><span>: programming, ssbm</span></div>
+								<div className="bc-tags"><Tag className="tag-icon" /><span>:{tags.map((tag, i) => <span key={i} style={{marginLeft: ".2rem"}}>{` ${tag}`}</span>)}</span></div>
 								<div className="date-author"><span>{author}</span>/ <span>{date}</span></div>
 							</div>
 						</div>
