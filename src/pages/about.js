@@ -19,7 +19,7 @@ const About = ({data}) => {
 						<SocialIcons />
 					</div>
 					<div className="about-body">
-						I discovered my love for programming through friends who worked as developers and engineers. Watching them discuss their trade with one another prompted me to learn more about the field on my own, and I found myself engaged and inspired from the first line of Javascript I wrote. I'm capable of developing in a full stack role, but I tend to find myself gravitating towards the front end- I primarily write Javascript, and my favorite flavor of framework is React. <br /><br /> I'm a Chicago native who loves traveling, reading, and running, and on weekends I occasionally travel cross-country to compete in and commentate the oldest active competitive esport, Super Smash Brothers Melee for the Nintendo Gamecube. I'd love to play you sometime!
+						I discovered my love for programming through friends who worked as developers and engineers. Watching them discuss their trade with one another prompted me to learn more about the field on my own, and I found myself engaged and inspired from the first line of Javascript I wrote. I'm capable of developing in a full stack role, but I tend to find myself gravitating towards the front end. I primarily write Javascript, and my favorite flavor of framework is React. <br /><br /> I'm a Chicago native who loves traveling, reading, and running, and on weekends I occasionally travel cross-country to compete in and commentate the oldest active competitive esport, Super Smash Brothers Melee for the Nintendo Gamecube. I'd love to play you sometime!
 					</div>
 				</div>
 			</div>
