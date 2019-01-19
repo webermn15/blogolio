@@ -41,6 +41,12 @@ module.exports = {
             showCaptions: true,
           },
         },
+        {
+          resolve: `gatsby-remark-prismjs`,
+          options: {
+            inlineCodeMarker: '÷',
+          },
+        },
       ],
     },
   },

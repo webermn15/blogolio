@@ -22,7 +22,7 @@ My role was to help bring the programming aspect of it to life. Here's a quick b
  - USB controller input. The informational image being displayed is very high-res, so it's huge. As such, someone interacting with it will need to be able to scroll, pan, and zoom to see the entire thing. Fortunately, there are plenty of third-party USB Gamecube controller replicas.
  - An image viewer! Something that can handle large resolutions and allows for all the functionality described in the previous bullet point; scrolling, panning, and zooming.
 
-The Raspberry Pi 3 B+ fit the bill for composite out, as it supports 3.5mm audio/video. It's an often overlooked part of an already awesome device. Our Pi would be running the default OS, Raspbian, so we'd need a Linux image viewer capable of mapping hotkeys (which would be interpreted as inputs from the controller) to the panning, scrolling and zooming functions.
+The Raspberry Pi 3 B+ fit the bill for composite out, as it supports 3.5mm audio/video. It's an often overlooked part of an already awesome device. Our Pi would be running the default OS, Raspbian, so we'd need a Linux image viewer capable of mapping hotkeys (which would be interpreted from reading controller inputs) to the panning, scrolling and zooming functions.
 
 Enter [Feh!](https://feh.finalrewind.org/) Feh is a CLI based image viewer for Linux with a ton of functionality (like keyboard shortcuts!). Importantly, as a CLI based tool it is designed to be incredibly lightweight; perfect for avoiding bogging down the Pi. After purchasing a third party USB Gamecube controller replica, it was down to writing the script that would interpret the controller inputs as keyboard presses to allow users to manipulate the Feh-displayed image.
 

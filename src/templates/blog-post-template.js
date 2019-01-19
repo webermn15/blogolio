@@ -29,7 +29,7 @@ export const blogPostQuery = graphql`
     markdownRemark(fields: { slug: { eq: $path } }) {
     	html
     	frontmatter {
-    		date(formatString: "MMMM, DD YYYY")
+    		date(formatString: "MMMM DD, YYYY")
     		title
     		author
     	}

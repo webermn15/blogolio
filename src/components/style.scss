@@ -85,13 +85,12 @@ $body-serif: 'Source Serif Pro', 'Times New Roman', serif;
 */
 
 * {
-	font-family: $body-serif;
 	box-sizing: border-box;
 }
 
 ul { margin-left: 1rem; padding-left: 1rem; }
 
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; font-family: $body-serif; }
 body { background-image: url("../images/shine-bg.png"); }
 
 // ul, li { margin-left: 0; padding-left: 0; }
