@@ -28,6 +28,8 @@ Enter **[Feh](https://feh.finalrewind.org/)**! Feh is a CLI based image viewer f
 
 Next time! 
 
-Part 2: USB device data in Linux and a little Python
+[Part 2: USB input device data in Linux and a little Python](https://websdev.io/posts/py-and-pi-part-2/)
 
 -- Michael
+
+> Questions? Comments? Find me on Twitter at https://twitter.com/_websdev
