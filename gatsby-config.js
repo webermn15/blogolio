@@ -45,6 +45,7 @@ module.exports = {
           resolve: `gatsby-remark-prismjs`,
           options: {
             inlineCodeMarker: '÷',
+            showLineNumbers: true,
           },
         },
       ],
@@ -59,7 +60,7 @@ module.exports = {
         short_name: `websdev`,
         start_url: `/`,
         display: `standalone`,
-        icon: `src/images/comfyfrog.png`, // This path is relative to the root of the site.
+        icon: `src/images/comfyfrog.png`,
         theme_color_in_head: false,
       },
     },
