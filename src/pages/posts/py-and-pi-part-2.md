@@ -1,9 +1,9 @@
 ---
 title: Py and Pi, part 2
 date: '2019-02-28'
-spoiler: Handling USB data with Python
+spoiler: Handling USB device input with Python
 author: Webs
-tags: ["programming", "ssbm"]
+tags: ["programming", "python"]
 ---
 If you haven't yet, please check out [part one](https://websdev.io/posts/a-usb-controller-py-and-pi/) of this series of blog posts for context! :)
 
