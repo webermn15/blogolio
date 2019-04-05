@@ -16,7 +16,7 @@ In even simpler terms, it's a means of allowing viewers to **simultaneously lear
 
 > Picture from [Residual Media Depot's twitter account](https://twitter.com/residualmedia)
 
-My role was to help bring the programming aspect of it to life. Here's a quick breakdown of key points:
+My role was the programming aspect of the project; to configure a third party USB gamecube controller to control the panning, scrolling, and zooming of an image file on a CRT monitor or television, as described aboce. A very high level breakdown of some key points:
 
  - **Composite video out.** One of the most obvious distinguishing factors of SSBM is that it's still played on old CRT televisions, since the Gamecube was released in 2001 and serves video out through tri-color cables.
  - **USB controller input.** The informational image being displayed is very high-res, so it's huge. As such, someone interacting with it will need to be able to scroll, pan, and zoom to see the entire thing. Fortunately, there are plenty of third-party USB Gamecube controller replicas.
