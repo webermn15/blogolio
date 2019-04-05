@@ -1,6 +1,6 @@
 ---
 title: Py and Pi, part 3
-date: '2019-03-20'
+date: '2019-04-04'
 spoiler: A nice & clean little script
 author: Webs
 tags: ["programming", "python"]
