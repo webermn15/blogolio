@@ -13,6 +13,7 @@ const BlogCard = ({frontmatter, fields}) => {
 		<div className="blog-card">
 			<div className="blog-card__wrapper">
 				<Link
+					className="blog-card__link"
 					to={slug}
 					style={{color: "black"}}
 				>
